@@ -1,0 +1,22 @@
+<html>
+  <body>
+    <script>
+var raj ={age:35};
+
+var sum = function(a,b,c){
+  return this.age+a+b+c
+};
+
+//call
+console.log(sum.call(raj,10,20,30));
+
+//apply
+var ages=[60,50,40];
+console.log(sum.apply(raj,ages));
+
+//bind
+var bound=sum.bind(raj);
+console.log(bound(25,55,45));
+    </script>
+  </body>
+</html>
