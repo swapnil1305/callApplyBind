@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        this.name = 'Lucifer' ;
+        console.log(window.name);
+//object
+        this.age={
+            personAge:'twenty five(25)',
+            ageNear18(){
+                console.log(`${window.name}'s age is above 18`)
+            }
+        }
+        console.log(this.age.personAge);
+        this.age.ageNear18();
+//variable
+        
+//method
+        let phoneNumber ={
+            mobile:'8765893420',
+            callNumber(){
+                console.log(`Call ${window.name} on ${this.mobile}`)
+            }
+        }
+         console.log(phoneNumber.mobile)
+        phoneNumber.callNumber(); 
+//function
+         const designation=function(world) {
+            console.log(`${this.name} is a devil of ${world}`)
+         } 
+         designation.call(this,'hell')
+ 
+ //design pattern        
+         class student{
+static count=0; 
+
+constructor(name,age,phoneNumber,marks){
+   this.name=name;
+   this.age=age;
+   this.phoneNumber=phoneNumber;
+   this.marks=marks
+   student.countStudent();
+}
+static countStudent(){
+   return(student.count++);   
+}
+
+eligibility(){
+   if(this.marks >=40){
+       console.log(`${this.name} of age ${this.age} is eligible to go to college.`);
+   }
+   else //(this.marks<40) 
+   {
+       console.log(`${this.name} of age ${this.age} is not eligible to go to college.`);
+   }
+}
+}
+
+const Rahul=new student('Rahul',17,8976543219,72);
+const Hemant=new student('Hemant',19,8909897865,37);
+const Saurabh=new student('Saurabh',18,7890986578,41);
+const Simron=new student('Simron',17,9870789170,34);
+const Shirin=new student('Shirin',19,8989903456,61);
+
+console.log("Total number of students are "+ student.countStudent());
+
+Rahul.eligibility();
+Hemant.eligibility();
+Saurabh.eligibility();
+Simron.eligibility();
+Shirin.eligibility();
+          
+    </script>
+</body>
+</html>
